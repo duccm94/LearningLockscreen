@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="sectionText"
+            type="String"/>
+
+        <variable
+            name="subSectionText"
+            type="String"/>
+
+        <variable
+            name="rightText"
+            type="String"/>
+
+        <variable
+            name="previewImage"
+            type="android.graphics.drawable.Drawable"/>
+
+        <variable
+            name="hasSwitch"
+            type="boolean"/>
+
+        <variable
+            name="onCheckedChanged"
+            type="android.widget.CompoundButton.OnCheckedChangeListener"/>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <RelativeLayout
+        style="@style/SetttingSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/main_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/ll_right"
+            android:layout_centerVertical="true"
+            android:text="@{sectionText}"/>
+
+        <TextView
+            android:id="@+id/sub_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/main_section"
+            android:text="@{subSectionText}"
+            android:visibility="@{!TextUtils.isEmpty(subSectionText)}"/>
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <Switch
+                android:id="@+id/sw_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onCheckedChanged="@{onCheckedChanged}"
+                android:visibility="@{hasSwitch}"/>
+
+            <ImageView
+                android:id="@+id/img_right"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_100"
+                android:adjustViewBounds="true"
+                android:src="@{previewImage}"
+                android:visibility="@{previewImage != null}"
+                tools:ignore="contentDescription"/>
+
+            <TextView
+                android:id="@+id/tv_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{rightText}"
+                android:visibility="@{!TextUtils.isEmpty(rightText)}"/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

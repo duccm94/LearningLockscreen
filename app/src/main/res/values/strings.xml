@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY app_name "LearningLockscreen">
+]>
+
+<resources>
+    <string name="app_name">&app_name;</string>
+
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="setting_section_turn_lock_screen_mode">Turn Lock screen mode</string>
+    <string name="setting_section_use_lock_screen_password">Use Lock screen password</string>
+    <string name="setting_section_change_password">Change password</string>
+    <string name="setting_section_select_background">Select background</string>
+    <string name="setting_section_select_screen_type">Select screen type</string>
+    <string name="setting_section_select_language">Select Language</string>
+    <string name="setting_section_rate_us">Rate us</string>
+    <string name="setting_app_info">About &app_name;</string>
+
+    <string name="language_vietnamese">Tiếng Việt</string>
+</resources>
